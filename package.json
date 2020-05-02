@@ -1,5 +1,5 @@
 {
-  "name": "electroporation-research-group",
+  "name": "digital-doc-group",
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
@@ -25,8 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "update-i18n": "node ./tools/update-i18n-strings.js ./src/translations",
-    "update-doi": "node ./tools/update-doi.js ./src/publications"
+    "update-i18n": "node ./tools/update-i18n-strings.js ./src/translations"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -49,6 +49,9 @@ const ContactContainer = props => {
       <Typography variant="h4" align="center" gutterBottom>
         <FormattedMessage id="contact-us" />
       </Typography>
+      <Typography variant="h4" align="center" gutterBottom>
+        <FormattedMessage id="contact-by-email" />
+      </Typography>
     </div>
   );
 };

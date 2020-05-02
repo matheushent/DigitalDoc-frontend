@@ -1,19 +1,18 @@
 import axios from "axios";
 
-const classifyImages = async (setLoading, files, setResults) => {
+const authenticateImages = async (setLoading, files, setResults) => {
   const fetchArray = [];
   setLoading(true);
 
   for (let index = 0; index < files.length; index++) {
     const form = new FormData();
 
-    form.append("name", files[index]["name"]);
-    form.append("image", files[index]);
+    form.append("file", files[index]);
 
     fetchArray.push(
       axios({
         method: "POST",
-        url: "https://covid19-server.raulguedert.dev:5000/predict",
+        url: "http://localhost:5000/image",
         data: form
       })
     );
@@ -36,4 +35,4 @@ const classifyImages = async (setLoading, files, setResults) => {
   }
 };
 
-export default classifyImages;
+export default authenticateImages;
