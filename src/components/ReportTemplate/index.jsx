@@ -50,8 +50,9 @@ const styles = StyleSheet.create({
   },
   caseLink: {
     fontSize: 14,
-    marginBottom: 4
-  },
+    marginBottom: 4,
+    color: "#54a8e7"
+  }
 });
 
 const PdfDocument = props => {
