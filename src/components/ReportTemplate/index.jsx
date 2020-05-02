@@ -4,8 +4,7 @@ import {
   Text,
   View,
   Document,
-  StyleSheet,
-  Image
+  StyleSheet
 } from "@react-pdf/renderer";
 
 const styles = StyleSheet.create({
@@ -17,7 +16,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    backgroundColor: "#64b5f6",
+    backgroundColor: "#424242",
     width: "100%",
     padding: 16,
     color: "white",
@@ -33,23 +32,10 @@ const styles = StyleSheet.create({
     color: "white",
     marginBottom: 8
   },
-  headerAlert: {
-    fontSize: 10,
-    color: "white"
-  },
   container: {
     display: "flex",
     flexDirection: "row",
     width: "100%"
-  },
-  imagesContainer: {
-    display: "flex",
-    flexDirection: "column"
-  },
-  image: {
-    height: 250,
-    width: 250,
-    marginBottom: 16
   },
   detailsContainer: {
     display: "flex",
@@ -62,17 +48,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginBottom: 4
   },
-  caseResult: {
+  caseLink: {
     fontSize: 12,
     marginBottom: 4
   },
-  caseProbability: {
-    fontSize: 12
-  },
-  caseRadiologistComment: {
-    fontSize: 8,
-    marginTop: 16
-  }
 });
 
 const PdfDocument = props => {
@@ -88,49 +67,21 @@ const PdfDocument = props => {
                   <Text style={styles.headerDescription}>
                     {textInfos.subTitle}
                   </Text>
-                  <Text style={styles.headerAlert}>
-                    {textInfos.alertMessage}
-                  </Text>
                 </View>
                 <View key={caseData + index}>
                   <View key={index} style={styles.container}>
-                    <View style={styles.imagesContainer}>
-                      <Image
-                        style={styles.image}
-                        source={caseData.original_url}
-                      />
-                      <Image
-                        style={styles.image}
-                        source={caseData.heatmap_url}
-                      />
-                    </View>
                     <View style={styles.detailsContainer}>
                       <View>
                         <Text style={styles.caseTitle}>
-                          {textInfos.case}: {caseData.filename}
+                          {textInfos.id}: {caseData.id}
                         </Text>
                       </View>
                       <View>
-                        <Text style={styles.caseResult}>
-                          {textInfos.result}:{" "}
-                          {caseData.predictions[0].label === "normal"
-                            ? textInfos.resultNormal
-                            : textInfos.resultCovid}
+                        <Text style={styles.caseLink}>
+                          {textInfos.link}: {caseData.link}
                         </Text>
                       </View>
                       <View>
-                        <Text style={styles.caseProbability}>
-                          {textInfos.probability}:{" "}
-                          {Math.round(
-                            caseData.predictions[0].probability * 100
-                          )}
-                          %
-                        </Text>
-                      </View>
-                      <View>
-                        <Text style={styles.caseRadiologistComment}>
-                          {textInfos.radiologistNotes}:
-                        </Text>
                       </View>
                     </View>
                   </View>

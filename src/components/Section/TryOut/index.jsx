@@ -29,8 +29,7 @@ import PdfDocument from "../../ReportTemplate";
 
 import CaseFetch from "../../../utilities/CaseFetch";
 
-import COVIDSample from "../../../static/samples/TomographyCovid.jpg";
-import HealthySample from "../../../static/samples/TomographyNoCovid.jpg";
+import DOCUMENTSample from "../../../static/samples/IMG-20181031-WA0122.jpg";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -54,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     backgroundRepeat: "no-repeat",
     zIndex: -2,
     backgroundPosition: "center",
-    backgroundColor: "#212121"
+    backgroundColor: "#424242"
   },
   title: {
     marginTop: theme.spacing(2)
@@ -117,12 +116,8 @@ const TryOutContainer = props => {
         <FormattedMessage id="add-your-files" />
       </Typography>
       <Typography gutterBottom>
-        <FormattedMessage id="if-you-want-to-try-1" />
-        <a href={COVIDSample} download="COVID Sample">
-          <MdiIcon path={mdiDownload} size={1} color="white" />
-        </a>
-        <FormattedMessage id="if-you-want-to-try-2" />
-        <a href={HealthySample} download="Healthy Sample">
+        <FormattedMessage id="if-you-want-to-try" />
+        <a href={DOCUMENTSample} download="sample.jpg">
           <MdiIcon path={mdiDownload} size={1} color="white" />
         </a>
         .
@@ -155,10 +150,10 @@ const TryOutContainer = props => {
                   </ListItem>
                 ))
               ) : (
-                <Typography className={classes.typographyMargin}>
-                  <FormattedMessage id="you-have-to-add-at-least-one" />
-                </Typography>
-              )}
+                  <Typography className={classes.typographyMargin}>
+                    <FormattedMessage id="you-have-to-add-at-least-one" />
+                  </Typography>
+                )}
             </List>
           </Card>
           <div className={classes.buttonCanvas}>
@@ -182,9 +177,6 @@ const TryOutContainer = props => {
           </div>
         </Grid>
       </Grid>
-      <Typography>
-        <FormattedHTMLMessage id="important-validation" />
-      </Typography>
       <div className={classes.background} />
       {/* INPUTS AND ALERTS */}
       {caseResults.length > 0 && (
@@ -193,25 +185,16 @@ const TryOutContainer = props => {
             <PdfDocument
               cases={caseResults}
               textInfos={{
-                title: intl.formatMessage({ id: "coronax-report" }),
+                title: intl.formatMessage({ id: "digitaldoc-report" }),
                 subTitle: intl.formatMessage({
-                  id: "intelligence-against-covid19"
+                  id: "intelligence"
                 }),
-                alertMessage: intl.formatMessage({
-                  id: "important-validation-no-html"
-                }),
-                case: intl.formatMessage({ id: "case" }),
-                result: intl.formatMessage({ id: "result" }),
-                resultNormal: intl.formatMessage({ id: "result-normal" }),
-                resultCovid: intl.formatMessage({ id: "result-covid" }),
-                probability: intl.formatMessage({ id: "probability" }),
-                radiologistNotes: intl.formatMessage({
-                  id: "radiologist-notes"
-                })
+                id: intl.formatMessage({ id: "id" }),
+                link: intl.formatMessage({ id: "link" }),
               }}
             />
           }
-          fileName="CoronaX-ReportResult.pdf"
+          fileName="result.pdf"
           style={{
             display: "none"
           }}
@@ -225,7 +208,7 @@ const TryOutContainer = props => {
             ) {
               saveData(
                 url,
-                "CoronaX-ReportResult.pdf",
+                "result.pdf",
                 setSuccess,
                 setCaseResults,
                 setPageLoading
@@ -284,7 +267,7 @@ const TryOutContainer = props => {
       />
       <Backdrop className={classes.backdrop} open={pageLoading}>
         <CircularProgress color="inherit" />
-        <Typography variant="button" color="#fff" align="center">
+        <Typography variant="button" align="center">
           <FormattedMessage id="files-loading" />
         </Typography>
       </Backdrop>

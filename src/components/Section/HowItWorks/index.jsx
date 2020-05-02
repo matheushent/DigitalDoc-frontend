@@ -7,9 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
 import MdiIcon from "@mdi/react";
-import { mdiBrain, mdiCloudUpload, mdiFileOutline } from "@mdi/js";
-
-import BackgroundImage from "../../../static/Background/76.jpg";
+import { mdiLinkLock, mdiCamera, mdiFastForward } from "@mdi/js";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -31,8 +29,8 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     zIndex: -2,
-    backgroundImage: `url(${BackgroundImage})`,
-    backgroundPosition: "center"
+    backgroundPosition: "center",
+    backgroundColor: "#d3d3d3"
   },
   backdrop: {
     position: "absolute",
@@ -65,7 +63,7 @@ const HowItWorsContainer = () => {
     <div className={classes.root} id="how-it-works-section">
       <Typography className={classes.marginBottom} align="center" variant="h5">
         <b>
-          <FormattedMessage id="we-use-ai" />
+          <FormattedMessage id="we-use-blockchain" />
         </b>
       </Typography>
       <Grid
@@ -76,7 +74,7 @@ const HowItWorsContainer = () => {
       >
         <Grid item xs={12} md={3}>
           <div className={classes.gridItem}>
-            <MdiIcon path={mdiCloudUpload} size={5} color="#424242" />
+            <MdiIcon path={mdiCamera} size={5} color="#424242" />
             <Typography>
               <FormattedMessage id="how-it-works-first-step" />
             </Typography>
@@ -84,7 +82,7 @@ const HowItWorsContainer = () => {
         </Grid>
         <Grid item xs={12} md={3}>
           <div className={classes.gridItem}>
-            <MdiIcon path={mdiBrain} size={5} color="#424242" />
+            <MdiIcon path={mdiLinkLock} size={5} color="#424242" />
             <Typography>
               <FormattedMessage id="how-it-works-second-step" />
             </Typography>
@@ -92,7 +90,7 @@ const HowItWorsContainer = () => {
         </Grid>
         <Grid item xs={12} md={3}>
           <div className={classes.gridItem}>
-            <MdiIcon path={mdiFileOutline} size={5} color="#424242" />
+            <MdiIcon path={mdiFastForward} size={5} color="#424242" />
             <Typography>
               <FormattedMessage id="how-it-works-third-step" />
             </Typography>
