@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     marginBottom: 4
   },
   caseLink: {
-    fontSize: 12,
+    fontSize: 14,
     marginBottom: 4
   },
 });
@@ -60,35 +60,45 @@ const PdfDocument = props => {
     <Document>
       {cases
         ? cases.map((caseData, index) => {
-            return (
-              <Page style={styles.page}>
-                <View style={styles.header}>
-                  <Text style={styles.headerTitle}>{textInfos.title}</Text>
-                  <Text style={styles.headerDescription}>
-                    {textInfos.subTitle}
-                  </Text>
-                </View>
-                <View key={caseData + index}>
-                  <View key={index} style={styles.container}>
-                    <View style={styles.detailsContainer}>
-                      <View>
-                        <Text style={styles.caseTitle}>
-                          {textInfos.id}: {caseData.id}
-                        </Text>
-                      </View>
-                      <View>
-                        <Text style={styles.caseLink}>
-                          {textInfos.link}: {caseData.link}
-                        </Text>
-                      </View>
-                      <View>
-                      </View>
+          return (
+            <Page style={styles.page}>
+              <View style={styles.header}>
+                <Text style={styles.headerTitle}>{textInfos.title}</Text>
+                <Text style={styles.headerDescription}>
+                  {textInfos.subTitle}
+                </Text>
+              </View>
+              <View key={caseData + index}>
+                <View key={index} style={styles.container}>
+                  <View style={styles.detailsContainer}>
+                    <View>
+                      <Text style={styles.caseTitle}>
+                        {textInfos.filename}: {caseData.filename}
+                      </Text>
+                    </View>
+                    <View>
+                      <Text style={styles.caseTitle}>
+                        {textInfos.hash}: {caseData.Hash}
+                      </Text>
+                    </View>
+                    <View>
+                      <Text style={styles.caseLink}>
+                        {textInfos.link}: {caseData.link}
+                      </Text>
+                    </View>
+                    <View>
+                      <Text style={styles.caseTitle}>
+                        {textInfos.timestamp}: {caseData.timestamp}
+                      </Text>
+                    </View>
+                    <View>
                     </View>
                   </View>
                 </View>
-              </Page>
-            );
-          })
+              </View>
+            </Page>
+          );
+        })
         : "Something did wrong! Please, contact support!"}
     </Document>
   );
