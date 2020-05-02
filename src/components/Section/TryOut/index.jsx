@@ -189,8 +189,10 @@ const TryOutContainer = props => {
                 subTitle: intl.formatMessage({
                   id: "intelligence"
                 }),
-                id: intl.formatMessage({ id: "id" }),
+                timestamp: intl.formatMessage({ id: "timestamp" }),
                 link: intl.formatMessage({ id: "link" }),
+                filename: intl.formatMessage({ id: "filename" }),
+                hash: intl.formatMessage({ id: "hash" })
               }}
             />
           }
