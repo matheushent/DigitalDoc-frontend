@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "./static/js/main.d8d542a6.chunk.js",
+    "main.js.map": "./static/js/main.d8d542a6.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.6237c9e9.js",
+    "runtime~main.js.map": "./static/js/runtime~main.6237c9e9.js.map",
+    "static/js/2.327216ed.chunk.js": "./static/js/2.327216ed.chunk.js",
+    "static/js/2.327216ed.chunk.js.map": "./static/js/2.327216ed.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.fd1fe6f2cdf511db623af001392b5d3b.js": "./precache-manifest.fd1fe6f2cdf511db623af001392b5d3b.js",
+    "service-worker.js": "./service-worker.js",
+    "static/media/IMG-20181031-WA0122.jpg": "./static/media/IMG-20181031-WA0122.c74fe6ce.jpg",
+    "static/media/white-red-and-blue-flower-petals-3993212.jpg": "./static/media/white-red-and-blue-flower-petals-3993212.3f87b4f3.jpg"
+  }
+}
