@@ -32,6 +32,10 @@ const styles = StyleSheet.create({
     color: "white",
     marginBottom: 8
   },
+  headerAlert: {
+    fontSize: 10,
+    color: "white"
+  },
   container: {
     display: "flex",
     flexDirection: "row",
@@ -67,6 +71,9 @@ const PdfDocument = props => {
                 <Text style={styles.headerTitle}>{textInfos.title}</Text>
                 <Text style={styles.headerDescription}>
                   {textInfos.subTitle}
+                </Text>
+                <Text style={styles.headerAlert}>
+                  {textInfos.alertMessage}
                 </Text>
               </View>
               <View key={caseData + index}>
