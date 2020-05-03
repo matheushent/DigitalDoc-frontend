@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
 import MdiIcon from "@mdi/react";
-import { mdiLinkLock, mdiCamera, mdiFastForward } from "@mdi/js";
+import { mdiLinkLock, mdiCamera, mdiCellphoneInformation } from "@mdi/js";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -90,7 +90,7 @@ const HowItWorsContainer = () => {
         </Grid>
         <Grid item xs={12} md={3}>
           <div className={classes.gridItem}>
-            <MdiIcon path={mdiFastForward} size={5} color="#424242" />
+            <MdiIcon path={mdiCellphoneInformation} size={5} color="#424242" />
             <Typography>
               <FormattedMessage id="how-it-works-third-step" />
             </Typography>

@@ -18,6 +18,10 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 
 import MdiIcon from "@mdi/react";
 import { mdiDownload } from "@mdi/js";
@@ -28,6 +32,8 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfDocument from "../../ReportTemplate";
 
 import CaseFetch from "../../../utilities/CaseFetch";
+
+import NumberFetch from "../../../utilities/NumberFetch";
 
 import DOCUMENTSample from "../../../static/samples/IMG-20181031-WA0122.jpg";
 
@@ -58,7 +64,7 @@ const useStyles = makeStyles(theme => ({
   title: {
     marginTop: theme.spacing(2)
   },
-  cardSize: { maxHeight: 300, overflow: "auto", marginTop: theme.spacing(4) },
+  cardSize: { maxHeight: 300, overflow: "auto", marginTop: theme.spacing(1) },
   typographyMargin: {
     margin: theme.spacing(1)
   },
@@ -106,6 +112,7 @@ const TryOutContainer = props => {
   const [pageLoading, setPageLoading] = useState(false);
   const [caseResults, setCaseResults] = useState([]);
   const { files, setFiles, intl } = props;
+  var phone = "+55";
 
   return (
     <div className={classes.root} id="try-out-section">
@@ -156,6 +163,21 @@ const TryOutContainer = props => {
                 )}
             </List>
           </Card>
+          <Card className={classes.cardSize}>
+            <Typography className={classes.typographyMargin}>
+              <InputLabel htmlFor="input-with-icon-adornment">
+                <FormattedMessage id="add-phone" />
+              </InputLabel>
+              <Input
+                id="phone-input"
+                startAdornment={
+                  <InputAdornment position="start">
+                    <PhoneIphoneIcon />
+                  </InputAdornment>
+                }
+              />
+            </Typography>
+          </Card>
           <div className={classes.buttonCanvas}>
             <Button
               className={classes.buttonMargin}
@@ -188,6 +210,9 @@ const TryOutContainer = props => {
                 title: intl.formatMessage({ id: "digitaldoc-report" }),
                 subTitle: intl.formatMessage({
                   id: "intelligence"
+                }),
+                alertMessage: intl.formatMessage({
+                  id: "important-authentication"
                 }),
                 timestamp: intl.formatMessage({ id: "timestamp" }),
                 link: intl.formatMessage({ id: "link" }),
