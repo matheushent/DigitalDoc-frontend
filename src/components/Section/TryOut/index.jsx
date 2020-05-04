@@ -22,6 +22,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
+import TextField from '@material-ui/core/TextField';
 
 import MdiIcon from "@mdi/react";
 import { mdiDownload } from "@mdi/js";
@@ -112,7 +113,6 @@ const TryOutContainer = props => {
   const [pageLoading, setPageLoading] = useState(false);
   const [caseResults, setCaseResults] = useState([]);
   const { files, setFiles, intl } = props;
-  var phone = "+55";
 
   return (
     <div className={classes.root} id="try-out-section">
@@ -170,6 +170,7 @@ const TryOutContainer = props => {
               </InputLabel>
               <Input
                 id="phone-input"
+                defaultValue="+55"
                 startAdornment={
                   <InputAdornment position="start">
                     <PhoneIphoneIcon />
