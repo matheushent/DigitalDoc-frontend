@@ -12,7 +12,7 @@ const authenticateImages = async (setLoading, files, setResults) => {
     fetchArray.push(
       axios({
         method: "POST",
-        url: "http://ec2-52-48-28-220.eu-west-1.compute.amazonaws.com/image",
+        url: "http://34.71.233.233:5000/image",
         data: form
       })
     );
