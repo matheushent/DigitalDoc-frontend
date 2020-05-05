@@ -12,7 +12,7 @@ const authenticateImages = async (setLoading, files, setResults) => {
     fetchArray.push(
       axios({
         method: "POST",
-        url: "http://34.71.233.233:5000/image",
+        url: "https://machines-274411.rj.r.appspot.com/image",
         data: form
       })
     );
